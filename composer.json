@@ -1,6 +1,7 @@
 {
     "name": "lotharthesavior/livewire-hubspot",
     "description": "Livewire Hubspot Tracking Code",
+    "license": "MIT",
     "keywords": [
         "lotharthesavior",
         "laravel",
