@@ -1,0 +1,24 @@
+{
+    "name": "lotharthesavior/livewire-hubspot",
+    "description": "Livewire Hubspot Tracking Code",
+    "keywords": [
+        "lotharthesavior",
+        "laravel",
+        "livewire-hubspot"
+    ],
+    "autoload": {
+        "psr-4": {
+            "LivewireHubspot\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Savio Resende",
+            "email": "savio@savioresende.com.br"
+        }
+    ],
+    "require": {
+        "livewire/livewire": "^2.0",
+        "laravel/framework": "^8.12"
+    }
+}
