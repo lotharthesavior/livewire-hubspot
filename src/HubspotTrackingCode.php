@@ -1,6 +1,6 @@
 <?php
 
-namespace HubspotTrackingCode;
+namespace LivewireHubspot;
 
 use App\Models\User;
 use Illuminate\Support\Facades\Http;

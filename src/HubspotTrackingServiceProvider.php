@@ -1,10 +1,10 @@
 <?php
 
-namespace HubspotTrackingCode;
+namespace LivewireHubspot;
 
 use Livewire\Livewire;
 use Illuminate\Support\ServiceProvider;
-use HubspotTrackingCode\HubspotTrackingCode;
+use LivewireHubspot\HubspotTrackingCode;
 
 class HubspotTrackingServiceProvider extends ServiceProvider
 {
