@@ -19,8 +19,8 @@
         }
     ],
     "require": {
-        "livewire/livewire": "^2.0",
-        "laravel/framework": "^8.12"
+        "livewire/livewire": "^2.8",
+        "laravel/framework": "^8.12|^9.0"
     },
     "extra": {
         "laravel": {
