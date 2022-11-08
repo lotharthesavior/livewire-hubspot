@@ -26,9 +26,12 @@ class HubspotTrackingCode extends Component
 
     public function getIdentificationToken()
     {
-        $response = Http::post('https://api.hubspot.com/conversations/v3/visitor-identification/tokens/create?hapikey=' . config('hubspot.api-token'), [
-            'email' => $this->user->email ?? null,
-        ]);
+        $token = config('hubspot.api-token');
+        $url = 'https://api.hubspot.com/conversations/v3/visitor-identification/tokens/create';
+        $response = Http::withToken($token)
+            ->post($url, [
+                'email' => $this->user->email ?? null,
+            ]);
 
         $response_body = $response->json();
 
@@ -55,7 +58,9 @@ class HubspotTrackingCode extends Component
             return;
         }
 
-        $response = Http::post('https://api.hubapi.com/contacts/v1/contact/vid/' . $contact['vid'] . '/profile?hapikey=' . config('hubspot.api-token'), [
+        $token = config('hubspot.api-token');
+        $url = 'https://api.hubapi.com/contacts/v1/contact/vid/' . $contact['vid'] . '/profile';
+        $response = Http::withToken($token)->post($url, [
             'properties' => $this->getProperties(),
         ]);
 
@@ -69,7 +74,9 @@ class HubspotTrackingCode extends Component
      */
     private function getContact()
     {
-        $response = Http::get('https://api.hubapi.com/contacts/v1/contact/email/' . $this->user->email . '/profile?hapikey=' . config('hubspot.api-token'));
+        $token = config('hubspot.api-token');
+        $url = 'https://api.hubapi.com/contacts/v1/contact/email/' . $this->user->email . '/profile';
+        $response = Http::withToken($token)->get($url);
 
         $contact = $response->json();
 
